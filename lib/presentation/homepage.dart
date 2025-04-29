@@ -48,4 +48,23 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
-                   
+                    const Spacer(),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(context, 
+                        MaterialPageRoute(builder: (context) => const LoginPage()),
+                         (Route<dynamic> route) => false,
+                        );
+                      },
+                      icon: const Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+             
