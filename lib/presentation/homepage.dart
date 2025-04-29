@@ -10,4 +10,21 @@ class HomePage extends StatelessWidget {
 
   const HomePage({super.key, required this.username});
 
- 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xFFFCF6F4),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(16),
+                color: Colors.deepOrange,
+                child: Row(
+                  children: [
+                    const CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('assets/images/avatar.jpg'),
+                    ),
+                    
