@@ -135,4 +135,43 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                     ),
                     const SizedBox(width: 8),
-                   
+                    Expanded(
+                      child: TextFormField(
+                        controller: confirmPasswordController,
+                        obscureText: _obscureConfirmPassword,
+                        decoration: InputDecoration(
+                          labelText: 'Konfirmasi Password',
+                          prefixIcon: const Icon(Icons.lock),
+                          suffixIcon: IconButton(
+                            icon: Icon(
+                              _obscureConfirmPassword ? Icons.visibility_off : Icons.visibility,
+                            ),
+                            onPressed: () {
+                              setState(() {
+                                _obscureConfirmPassword = !_obscureConfirmPassword;
+                              });
+                            },
+                          ),
+                          border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        ),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Konfirmasi password';
+                          }
+                          if (value != passwordController.text) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Password tidak sama'),
+                           backgroundColor: Colors.red,),
+                        );          
+                        return 'Password tidak sama';
+                            
+                          }
+                          return null;
+                        },
+                      ),
+                    ),
+                  ],
+                ),
+               
