@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
 class HomePkt extends StatefulWidget {
   final String email;
@@ -17,6 +19,28 @@ class _HomePktState extends State<HomePkt> {
 
   bool _tanggalError = false;
   bool _tugasError = false;
+
+  @override
+  void initState() {
+  
+    super.initState();
+    initializeDateFormatting('id_ID', null);
+    _namaController.text = widget.email;
+  }
+
+  void _pickDate() async {
+    DateTime? picked = await showDatePicker(
+      context: context,
+      initialDate: DateTime.now(),
+      firstDate: DateTime(2020),
+      lastDate: DateTime(2101),
+    );
+    if (picked != null) {
+      setState(() {
+        _selectedDate = picked;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
