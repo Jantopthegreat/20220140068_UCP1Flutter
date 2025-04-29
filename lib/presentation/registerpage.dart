@@ -174,4 +174,32 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   ],
                 ),
-               
+                const SizedBox(height: 24),
+                SizedBox(
+                  width: double.infinity,
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.deepOrange,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState!.validate()) {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(content: Text('Berhasil Daftar')),
+                        );
+                        Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(builder: (context) =>  HomePage(
+                            username: emailController.text, 
+                          )
+                          ),
+                        );
+                      }
+                    },
+                    child: const Text('Daftar', style: TextStyle(fontSize: 16, color: Colors.white)),
+                  ),
+                ),
+              
