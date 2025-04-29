@@ -38,3 +38,10 @@ class _RegisterPageState extends State<RegisterPage> {
                 width: 200,
                 height: 200,
               ),
+                const Text(
+                  'DAFTAR AKUN BARU',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
