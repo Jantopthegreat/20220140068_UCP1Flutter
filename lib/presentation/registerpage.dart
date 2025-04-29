@@ -16,4 +16,5 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController = TextEditingController();
 
- 
+  bool _obscurePassword = true;
+  bool _obscureConfirmPassword = true;
