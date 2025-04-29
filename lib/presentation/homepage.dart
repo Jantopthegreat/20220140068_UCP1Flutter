@@ -67,4 +67,19 @@ class HomePage extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-             
+              
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.asset(
+                    'assets/images/banner.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 24),
+
+              
+            
